@@ -1,0 +1,40 @@
+package com.company;
+
+import java.util.Scanner;
+
+
+
+    public class Main {
+
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+            boolean range = false;
+
+            System.out.println("What is the height? (Between 1-8)");
+            int height = 0;
+            while (!range) {
+                height = scan.nextInt();
+                if (height <= 8 && height >= 1) {
+                    range = true;
+                } else {
+                    scan.next();
+                }
+            }
+
+                for (int x = 0; x < height; x++) {
+
+                    for (int blank = 0; blank < height - x - 1; blank++) {
+                        System.out.print(" ");
+                    }
+                    for (int column = 0; column <= x; column++) {
+                        System.out.print("#");
+                    }
+                    System.out.print("  ");
+                    for (int column = 0; column <= x; column++) {
+                        System.out.print("#");
+                    }
+                    System.out.print("\n");
+                }
+            }
+
+        }
